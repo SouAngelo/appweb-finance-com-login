@@ -61,6 +61,7 @@ Escolha um avatar de perfil que melhor te agrada. É só clicar na imagem de per
 - Web de front-end: Netlify
 - Flexbox
 - Hooks
+- Design responsivo
 
 ## 📓 Bibliotecas Utilizadas
 
