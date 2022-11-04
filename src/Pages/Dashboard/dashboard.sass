@@ -1,0 +1,144 @@
+@mixin flex($j, $a, $f)
+    display: flex
+    justify-content: $j
+    align-items: $a
+    flex-direction: $f
+
+@mixin dropshadow
+    filter: drop-shadow(2px 2px 2px #888888)
+
+$background-color: #fff
+
+.dashboard
+    width: 80%
+    height: 100%
+    margin: 2rem auto
+
+.titulo
+    text-align: center
+    margin-bottom: 2rem
+
+.header
+    width: 100%
+    @include flex(space-between, center, row)
+    background: $background-color
+    border-radius: 15px
+    @include dropshadow
+    margin-bottom: 2rem
+    padding: 0 1rem
+    @media screen and(max-width: 720px)
+        @include flex(center, center, column)
+
+.month
+    width: 25%
+    height: 50px
+    @include flex(space-around, center, row)
+    @media screen and(max-width: 720px)
+        width: 100%
+        margin-bottom: 15px
+        margin-top: 15px
+
+    & p
+        margin: 0
+        text-align: center
+        margin: 0 10px
+
+    & i
+        background: #0f518d
+        padding: 8px
+        color: #fff
+        cursor: pointer
+
+.finance
+    text-align: center
+    width: 25%
+    padding: 20px 15px
+    @media screen and(max-width: 720px)
+        width: 100%
+
+    & p
+        margin: 0
+        margin-bottom: 8px
+
+    & h2
+        font-size: 18px
+        font-weight: 700
+        margin: 0
+
+    & .balance
+        color: #55bb0c
+
+.informations
+    width: 100%
+    @include flex(space-around, center, row)
+    background: $background-color
+    border-radius: 15px
+    @include dropshadow
+    padding: 1.5rem 1rem
+    margin-bottom: 2rem
+    @media screen and(max-width: 900px)
+        @include flex(center, start, column)
+
+    & button
+        width: 150px
+        height: 35px
+        margin-top: 27px
+        border-radius: 10px
+        background: #0f518d
+        color: #fff
+        transition: all .3s
+        @media screen and(max-width: 900px)
+            align-self: center
+
+        &:hover
+            background: #064075
+
+.information-content
+    padding: 0 1rem
+    @media screen and(max-width: 900px)
+        width: 100%
+        margin-bottom: 15px
+
+    & h1
+        font-size: 17px
+        font-weight: 700
+
+    & select, input
+        width: 95%
+        min-width: 100px
+        height: 35px
+        padding: 2px 10px
+
+.table-container
+    width: 100%
+    background: $background-color
+    border-radius: 15px
+    @include dropshadow
+    padding: 1.5rem 2rem
+
+    & table
+        width: 100%
+        border-collapse: collapse
+        margin: 0
+        padding: 0
+        margin-bottom: 40px
+        @media screen and(max-width: 550px)
+            @include flex(space-between, center, row)
+
+        & th, td
+            border-bottom: 1px solid #000
+            @media screen and(max-width: 550px)
+                display: block
+                margin-bottom: 5px
+                border-bottom: 0
+
+        & tbody
+            @media screen and(max-width: 550px)
+                @include flex(center, center, column)
+
+    & tr
+        text-align: left
+
+        & td
+            @media screen and(max-width: 550px)
+                text-align: right
